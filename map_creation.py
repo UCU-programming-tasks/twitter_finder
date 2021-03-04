@@ -6,6 +6,9 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 from folium.plugins import MarkerCluster
 
+YOUR_BEARER_KEY = ''
+YOUR_BEARER_SECRET = ''
+
 
 def init(user_agent: str = 'dyaroshevych123') -> RateLimiter:
     """
@@ -74,8 +77,8 @@ def get_twitter_friends(username: str) -> pd.DataFrame:
     # Initialize Twitter API
     auth = tweepy.OAuthHandler('bcXpN5x2fAhvz7lZ8ECSFEb12',
                                'vJiNduJRIde5pcl7qxEucZg1FbN8oRBdNwK0WFG5dIivtEDxvC')
-    auth.set_access_token('864557136378032129-AyPyxR9SfymKEfGDALluo0ImcM92Z7p',
-                          'TIDqE84dLlWXodftVw9EczHsPCivG9vgtOz0zji3CO6bR')
+    auth.set_access_token(YOUR_BEARER_KEY,
+                          YOUR_BEARER_SECRET)
     api = tweepy.API(auth)
 
     # Get a list of Twitter friends of the specified account
